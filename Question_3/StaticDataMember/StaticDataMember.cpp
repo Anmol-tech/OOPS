@@ -26,10 +26,6 @@ public:
     void output() {
         cout << "\nKey:" << key << "\tValue:" << value;
     }
-
-    static void print_details() {
-        cout << "\nName : Anmol Sharma\t Roll.No.14\n";
-    }
 };
 
 int Dictionary::size = 0;
