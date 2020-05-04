@@ -7,7 +7,7 @@ class String {
     char *string;
     int size;
 public:
-    String(char *arr) {
+    String(char *arr = "") {
         setString(arr);
     }
 
@@ -28,20 +28,23 @@ public:
     ~String() {
         delete string;
     }
+
+    String operator=(String *obj) {
+        String str_1;
+        str_1.setString(obj->getString());
+        return str_1;
+    }
 };
 
 
-void operator=(String &des, String origin) {
-    des.setString(origin.getString());
-}
 
 int main() {
     String str("Hello World");
     String other("");
     cout << "\nName : Anmol Sharma\t Roll.No.14\n";
-    cout << "String 1:";
+    cout << "\nString 1:";
     str.show();
-    cout << "String 2 :";
+    cout << "\nString 2:";
     other = str;
     other.show();
 }
